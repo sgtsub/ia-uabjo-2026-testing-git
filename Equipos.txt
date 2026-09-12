@@ -239,6 +239,74 @@ Tipo de IA: LLM mediante API en línea — por definir.
 
 Métricas mínimas: Si tuviéramos poco tiempo, nuestra versión mínima tendría únicamente el registro de inventario y ventas, el cálculo de compras necesarias y el chat capaz de recomendar bebidas.
 
+–----------------- 6. Equipo KEFA AI - PROYECTO: KEFA AI --------------------------––––—
+Integrante 1 – Kevin Antonio Marcial Sanchez - Kevin-anto
+Responsabilidades dentro del equipo: Desarrollo y mantenimiento del backend, diseño de la API y administración de la base de datos.
+Herramientas, lenguajes de programación, módulos de los que se hará cargo: Python, Django, Django REST Framework y PostgreSQL. Módulos de usuarios, autenticación, servicios, acciones e historial.
+
+Integrante 2 – Paola Estefania Ruiz Mendez - Estefania405
+Responsabilidades dentro del equipo: Desarrollo de la Inteligencia Artificial y del orquestador inteligente encargado de interpretar las instrucciones del usuario y seleccionar las acciones correspondientes.
+Herramientas, lenguajes de programación, módulos de los que se hará cargo: Python, API de OpenAI y/o Claude, LLM, Tool Calling y lógica del orquestador. Módulos de IA, prompts, herramientas y validación de acciones.
+
+Integrante 3 – Eric Alan Ramirez Avila - ericrm10
+Responsabilidades dentro del equipo: Desarrollo de las automatizaciones e integración con servicios externos.
+Herramientas, lenguajes de programación, módulos de los que se hará cargo: n8n, Telegram Bot API, Google Calendar API, Google Tasks API y Notion API. Módulos de workflows, integraciones, webhooks y automatizaciones.
+
+Integrante 4 – Alan Herminio Guerra Olmedo - AlanGuerraO
+Responsabilidades dentro del equipo: Desarrollo de la interfaz de usuario y configuración del entorno de desarrollo y despliegue.
+Herramientas, lenguajes de programación, módulos de los que se hará cargo: React, Vite, Docker, Docker Compose, Git y GitHub. Módulos de dashboard, historial, gestión de servicios y configuración del entorno.
+Seguridad: Los cuatro integrantes participarán en la implementación y revisión de seguridad del proyecto, incluyendo autenticación, permisos, protección de credenciales, validación de datos, APIs, Tool Calling y prevención de ataques como Prompt Injection.
+_______________________________________________________________________________________________________________________________________________
+1. Propuesta general
+La propuesta general es desarrollar un orquestador personal inteligente que permita al usuario realizar diferentes tareas digitales mediante instrucciones escritas en lenguaje natural.
+El usuario podrá realizar solicitudes como: “Agrega una reunión mañana a las 5 de la tarde y crea una tarea para preparar la presentación”. La Inteligencia Artificial interpretará la solicitud, identificará las acciones necesarias y seleccionará las herramientas autorizadas para ejecutarlas.
+El proyecto busca resolver el problema de tener que utilizar diferentes aplicaciones para realizar tareas relacionadas con la organización personal. KEFA AI pretende centralizar estas acciones mediante una sola interfaz.
+El proyecto estará enfocado principalmente en estudiantes y personas que necesiten organizar actividades personales o académicas.
+________________________________________________________________________________________________________________________________________________
+2. Arquitectura y herramientas
+Para el proyecto se utilizará un LLM mediante una API en línea, como OpenAI y/o Claude. Se eligió esta opción porque permite utilizar modelos avanzados sin necesidad de entrenar o ejecutar un modelo de gran tamaño localmente.
+Para el frontend se utilizará React, debido a que permite desarrollar una interfaz modular y dinámica. Para el backend se utilizará Python junto con Django y Django REST Framework, debido a la experiencia previa del equipo y a que facilita el desarrollo de APIs.
+La información del sistema será almacenada en PostgreSQL, debido a su robustez y compatibilidad con Django.
+Para las automatizaciones se utilizará n8n, conectado con servicios como Telegram, Google Calendar, Google Tasks y Notion mediante sus respectivas APIs.
+La parte más riesgosa técnicamente será conseguir que la IA interprete correctamente las instrucciones, seleccione la herramienta adecuada y genere parámetros válidos, además de garantizar que ninguna acción no autorizada pueda ejecutarse.
+La seguridad también representa un reto importante, por lo que se implementarán validaciones, permisos, protección de credenciales y confirmaciones para acciones sensibles.
+Para probar el sistema se utilizarán casos de uso reales y controlados, con datos de prueba en las diferentes plataformas. Se realizarán pruebas de interpretación, ejecución, errores y seguridad, además de pruebas con usuarios para medir la facilidad y efectividad del sistema.
+Tipo de IA: LLM mediante API en línea.
+________________________________________________________________________________________________________________________________________________________
+3. Alcances
+Una versión mínima del proyecto con el tiempo disponible sería un sistema capaz de recibir instrucciones mediante Telegram, interpretarlas con un LLM y ejecutar acciones básicas utilizando Google Calendar y Google Tasks mediante n8n.
+El sistema deberá identificar la intención del usuario, seleccionar una herramienta autorizada, ejecutar la acción y registrar el resultado. Para acciones sensibles se deberá solicitar confirmación al usuario.
+Como entregables se contempla el código fuente, documentación del proyecto, repositorio en GitHub, configuración de n8n, pruebas y una demo funcional donde se muestre el flujo completo del sistema.
+
+Métricas mínimas
+•	Porcentaje de instrucciones interpretadas correctamente.
+•	Porcentaje de acciones ejecutadas correctamente.
+•	Porcentaje de selección correcta de herramientas.
+•	Cantidad de errores detectados y manejados correctamente.
+•	Pruebas con entre 5 y 10 usuarios para evaluar el funcionamiento y facilidad de uso.
+•	Verificar que las acciones sensibles no puedan ejecutarse sin la validación correspondiente.
+
+Funcionalidades adicionales
+Como funcionalidades opcionales, si el tiempo lo permite, se contempla:
+•	Integración con WhatsApp.
+•	Integración con Gmail.
+•	Mayor integración con Notion.
+•	Creación de automatizaciones mediante lenguaje natural.
+•	Soporte para diferentes proveedores de IA.
+•	Sistema de memoria para personalizar las respuestas.
+•	Despliegue completo en la nube.
+______________________________________________________________________________________________________________________________________________________________
+Retroalimentación
+•	Mantener la IA como un componente de interpretación y orquestación, evitando que tenga acceso directo e ilimitado a las APIs.
+•	Implementar un catálogo de herramientas autorizadas para controlar las acciones que puede ejecutar la IA.
+•	Considerar confirmaciones antes de ejecutar acciones sensibles o destructivas.
+•	Realizar pruebas con entre 5 y 10 usuarios para medir la tasa de éxito.
+•	Evaluar diferentes casos de instrucciones ambiguas para comprobar la capacidad de interpretación del LLM.
+•	Implementar mecanismos de seguridad para proteger tokens, credenciales y datos de los usuarios.
+•	Considerar ataques de Prompt Injection y manipulación del Tool Calling.
+•	Mantener Google Calendar y Google Tasks como las integraciones principales del MVP.
+•	Considerar Telegram como el medio inicial de interacción y dejar WhatsApp como funcionalidad adicional.
+_________________________________________________________________________________________________________________________________________________________________
 
 -------7. Tilines - PROYECTO: SISTEMA DE RECONOCIMIENTO DE OBJETOS CON APRENDIZAJE INCREMENTAL APLICADO A ROVER DE CONDUCCIÓN AUTÓNOMA BÁSICA----------
 Integrante 1 - Ana Laura Santiago Morales - Ani Responsabilidades dentro del equipo: Por discutir. Herramientas, lenguajes de programación, módulos de los que se hará cargo: Por discutir.
